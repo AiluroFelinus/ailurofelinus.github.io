@@ -1,2 +1,38 @@
-# ailurofelinus.github.io
-<!--Cat-->
+# CatButtonField
+A field of cat buttons!
+<!DOCTYPE html>
+<html>
+    <!--Move mouse to turn into face, click to darken, and double click to return to normal-->
+    <head>
+        <meta charset="utf-8">
+        <title>Field of Cat Buttons!</title>
+        <style>
+            body {
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var buttons = [];
+            var buttonAmount = 2056; //<---Change this number to change the number of buttons
+            for (var i = 0; i < buttonAmount; i++) {
+                buttons[i] = document.createElement("button");
+                buttons[i].textContent = "🐈";
+                var facify = function() {
+                    this.textContent = "🐱";
+                };
+                var darken = function() {
+                    this.textContent = "🐈‍⬛";
+                };
+                var normalify = function() {
+                    this.textContent = "🐈";
+                }
+                buttons[i].addEventListener("mouseenter", facify);
+                buttons[i].addEventListener("click", darken);
+                buttons[i].addEventListener("dblclick", normalify);
+                document.body.appendChild(buttons[i]);
+            }
+        </script>
+    </body>
+</html>
